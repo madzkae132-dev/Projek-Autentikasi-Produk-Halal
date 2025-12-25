@@ -93,4 +93,5 @@ if __name__ == '__main__':
 
     # Jalankan Bot Telegram
     print("Bot Aktif di Koyeb...")
-    application.run_polling(drop_pending_updates=True)
+    application.run_polling(drop_pending_updates=True) 
+
