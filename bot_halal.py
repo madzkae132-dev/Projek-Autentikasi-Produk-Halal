@@ -82,7 +82,6 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # --- 5. MAIN RUNNER ---
 if __name__ == '__main__':
     TOKEN = '8500299562:AAF1zgo01wLDB5gIqa7BJ3jQuE5inpCoWrM'
-    
     application = Application.builder().token(TOKEN).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
@@ -94,4 +93,5 @@ if __name__ == '__main__':
     # Jalankan Bot Telegram
     print("Bot Aktif di Koyeb...")
     application.run_polling(drop_pending_updates=True) 
+
 
