@@ -81,7 +81,6 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # --- 5. MAIN RUNNER ---
 if __name__ == '__main__':
-    # GANTI TOKEN DI BAWAH INI
     TOKEN = '8500299562:AAF1zgo01wLDB5gIqa7BJ3jQuE5inpCoWrM'
     
     application = Application.builder().token(TOKEN).build()
@@ -89,8 +88,9 @@ if __name__ == '__main__':
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     application.add_handler(MessageHandler(filters.PHOTO, handle_photo))
 
-    # Jalankan Flask di background agar Koyeb mendeteksi aplikasi "Healthy"
+    # Jalankan Flask Server di background (untuk Health Check Koyeb)
     keep_alive()
 
+    # Jalankan Bot Telegram
     print("Bot Aktif di Koyeb...")
     application.run_polling(drop_pending_updates=True)
