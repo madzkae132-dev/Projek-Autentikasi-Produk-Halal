@@ -13,4 +13,5 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Jalankan bot
+
 CMD ["python", "bot_halal.py"]
